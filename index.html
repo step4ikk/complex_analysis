@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комплексный анализ - Презентация</title>
+    
+    <!-- Подключение Reveal.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Подключение KaTeX для математических формул -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    
+    <!-- Подключение Plotly для графиков -->
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Слайд 1: Титульный слайд -->
+        <section data-markdown>
+    <script type="text/template">
+        <div style="text-align: center; margin-top: 50px;">
+            <h1 style="font-size: 2.5em; margin-bottom: 40px;">КОМПЛЕКСНЫЙ АНАЛИЗ</h1>
+                <p><strong>Вариант:</strong> №10</p>
+                <p><strong>Студент:</strong> Ситников Степан</p>
+                <p><strong>Группа:</strong> 06-02.03.01.03-41</p>
+                <p><strong>Преподаватель:</strong> Мачтаков Антон Викторович</p>
+            </div>
+        </div>
+    </script>
+</section>
+            
+            <!-- Слайд 2 - Разделитель: Введение -->
+            <section>
+                <h2>Введение в комплексный анализ</h2>
+            </section>
+            
+            <!-- Слайд 3: Определение комплексных чисел -->
+          <section data-markdown>
+    <script type="text/template">
+        ## Определение комплексных чисел
+
+        **Комплексное число** — число вида:
+
+        $$ z = a + bi $$
+
+        где:
+        - $a$ — действительная часть (Re(z))
+        - $b$ — мнимая часть (Im(z))
+        - $i$ — мнимая единица, $i^2 = -1$
+
+        **Множество комплексных чисел** обозначается $\mathbb{C}$.
+    </script>
+</section>
+            
+            <!-- Слайд 4 - Разделитель: Формы записи -->
+            <section>
+                <h2>Формы записи комплексных чисел</h2>
+            </section>
+            
+            <!-- Слайд 5: Алгебраическая форма -->
+            <section data-markdown>
+                <script type="text/template">
+                    ## Алгебраическая форма
+                    <div style="font-size: 0.9em;">
+
+                    
+                    $$ z = a + bi $$
+                    
+                    где:
+                    - $a, b \in \mathbb{R}$
+                    - $i$ — мнимая единица
+                    
+                    **Пример:**
+                    $$ z = 3 + 4i $$
+                    - Re(z) = 3
+                    - Im(z) = 4
+
+                </script>
+            </section>
+            
+            <!-- Слайд 6: Тригонометрическая форма -->
+            <section data-markdown>
+                <script type="text/template">
+                    ## Тригонометрическая форма
+                    <div style="font-size: 0.9em;">
+
+                    $$ z = r(\cos\varphi + i\sin\varphi) $$
+                    
+                    где:
+                    - $r = |z| = \sqrt{a^2 + b^2}$ — модуль
+                    - $\varphi = \arg(z)$ — аргумент
+                    
+                    **Формулы:**
+                    $$ r = \sqrt{a^2 + b^2} $$
+                    $$ \varphi = \arctan\left(\frac{b}{a}\right) $$
+                    </div>
+                </script>
+            </section>
+            
+            <!-- Слайд 7: Показательная форма -->
+            <section data-markdown>
+                <script type="text/template">
+                    ## Показательная форма
+                    
+                    $$ z = re^{i\varphi} $$
+                    
+                    где:
+                    - $r = |z|$ — модуль
+                    - $\varphi = \arg(z)$ — аргумент
+                    
+                    **Формула Эйлера:**
+                    $$ e^{i\varphi} = \cos\varphi + i\sin\varphi $$
+                </script>
+            </section>
+            
+            <!-- Слайд 8: Примеры всех форм -->
+            <section>
+                <h3>Пример комплексного числа во всех формах</h3>
+                <div id="complex-example">
+                    <p>Пусть $z = 1 + i$</p>
+                    <div class="fragment">
+                        <p><strong>Алгебраическая:</strong> $1 + i$</p>
+                    </div>
+                    <div class="fragment">
+                        <p><strong>Модуль:</strong> $r = \sqrt{1^2 + 1^2} = \sqrt{2}$</p>
+                    </div>
+                    <div class="fragment">
+                        <p><strong>Аргумент:</strong> $\varphi = \arctan(1) = \frac{\pi}{4}$</p>
+                    </div>
+                    <div class="fragment">
+                        <p><strong>Тригонометрическая:</strong> $\sqrt{2}(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4})$</p>
+                    </div>
+                    <div class="fragment">
+                        <p><strong>Показательная:</strong> $\sqrt{2}e^{i\frac{\pi}{4}}$</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Слайд 9 - Разделитель: Программы -->
+            <section>
+                <h2>Программы для работы с комплексными числами</h2>
+            </section>
+            
+            <!-- Слайд 10: Конвертер форм записи -->
+            <section>
+                <h3>Конвертер форм записи комплексных чисел</h3>
+                <div class="converter-container">
+                    <div class="input-group">
+                        <label for="converter_value">Комплексное число (алгебраическая форма):</label>
+                        <input type="text" id="converter_value" placeholder="3+4i" value="3+4i">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="converter_type">Преобразовать в:</label>
+                        <select id="converter_type">
+                            <option value="0">Тригонометрическую форму</option>
+                            <option value="1">Показательную форму</option>
+                        </select>
+                    </div>
+                    
+                    <button id="converter_button" class="convert-btn">Преобразовать</button>
+                    
+                    <div class="result-container" style="margin-top: 70px;">
+                        <h4 style="color: black;">Результат:</h4>
+                        <div id="converter_out" class="result-box"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Слайд 11 - с исходным кодом -->
+            <section>
+                <h3>Исходный код программы:</h3>
+
+                <div style="display: flex; justify-content: center; gap: 40px; margin-top: 50px;">
+                 <!-- Первая картинка -->
+                <div style="text-align: center;">
+                <img src="C:\Users\Степан\Downloads\2026-01-21_19-28-43.png"
+                 style="max-width: 700px; max-height: 440px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                 </div>
+
+                <!-- Вторая картинка -->
+                <div style="text-align: center;">
+                <img src="C:\Users\Степан\Downloads\2026-01-21_19-29-17.png"
+                     style="max-width: 700px; max-height: 750px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+                </div>
+                </section>
+            
+            <!-- Слайд 12: Комплексная плоскость -->
+            <section data-markdown>
+                <script type="text/template">
+                    ## Комплексная плоскость
+                    <div style="font-size: 0.7em;">
+
+                    **Комплексная плоскость** (плоскость Гаусса) — геометрическое представление комплексных чисел.
+
+                    ![Комплексная плоскость](https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Complex_number_illustration.svg/300px-Complex_number_illustration.svg.png)
+
+                    - Ось X: действительная часть (Re)
+                    - Ось Y: мнимая часть (Im)
+                    - Точка (a, b) ↔ число a + bi
+                </script>
+            </section>
+            
+            <!-- Слайд 13: Построитель векторов -->
+            <section>
+                <h3>Построение вектора на комплексной плоскости</h3>
+                <div class="plot-container">
+                    <div class="input-group">
+                        <label for="vector_real" style="font-size: 0.5em;">Действительная часть (a):</label>
+                        <input type="number" id="vector_real" value="3" step="0.1" style="font-size: 0.5em;">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="vector_imag" style="font-size: 0.5em;">Мнимая часть (b):</label>
+                        <input type="number" id="vector_imag" value="4" step="0.1" style="font-size: 0.5em;">
+                    </div>
+                    
+                    <button id="plot_button" class="plot-btn" style="font-size: 0.5em;">Построить вектор</button>
+
+                    <div style="display: flex; justify-content: center; align-items: center; margin-top: 30px;">
+                        <div id="plotly_graph" style="width: 600px; height: 300px; border: none !important; background: transparent !important;"></div>
+                    </div>
+            </section>
+
+            <!-- Слайд 14 - с исходным кодом -->
+            <section>
+                <h3>Исходный код программы:</h3>
+
+                <div style="display: flex; justify-content: center; gap: 40px; margin-top: 50px;">
+                 <!-- Первая картинка -->
+                <div style="text-align: center;">
+                <img src="C:\Users\Степан\Downloads\2026-01-21_20-22-57.png"
+                 style="max-width: 700px; max-height: 750px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                 </div>
+
+                <!-- Вторая картинка -->
+                <div style="text-align: center;">
+                <img src="C:\Users\Степан\Downloads\2026-01-21_20-23-30.png"
+                     style="max-width: 700px; max-height: 325px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+                </div>
+                </section>
+
+            <!-- Слайд 15 - Разделитель: Операции -->
+            <section>
+                <h2>Арифметические операции с комплексными числами</h2>
+            </section>
+            
+            <!-- Слайд 16-19: Операции с формулами и примерами -->
+            <section data-markdown>
+                <script type="text/template">
+                    ## Сложение комплексных чисел
+                    
+                    **Формула:**
+                    $$ (a + bi) + (c + di) = (a + c) + (b + d)i $$
+                    
+                    **Пример:**
+                    $$ (2 + 3i) + (4 + 5i) = (2 + 4) + (3 + 5)i = 6 + 8i $$
+                    
+                    **Геометрически:** сложение векторов на комплексной плоскости
+                </script>
+            </section>
+            
+            <section data-markdown>
+                <script type="text/template">
+                    ## Вычитание комплексных чисел
+                    
+                    **Формула:**
+                    $$ (a + bi) - (c + di) = (a - c) + (b - d)i $$
+                    
+                    **Пример:**
+                    $$ (5 + 7i) - (2 + 3i) = (5 - 2) + (7 - 3)i = 3 + 4i $$
+                </script>
+            </section>
+            
+            <section data-markdown>
+                <script type="text/template">
+                    ## Умножение комплексных чисел
+
+                    **Формула (алгебраическая форма):**
+                    <div style="font-size: 0.8em;">
+                    $$ (a + bi)(c + di) = (ac - bd) + (ad + bc)i $$
+                    </div>
+
+                    **Формула (тригонометрическая форма):**
+                    <div style="font-size: 0.8em;">
+                    $$ r_1(\cos\varphi_1 + i\sin\varphi_1) \cdot r_2(\cos\varphi_2 + i\sin\varphi_2) $$
+                    $$ = r_1r_2[\cos(\varphi_1 + \varphi_2) + i\sin(\varphi_1 + \varphi_2)] $$
+                    </div>
+
+                    **Пример:**
+                    <div style="font-size: 0.8em;">
+                    $$ (2 + 3i)(1 + 2i) = (2\cdot1 - 3\cdot2) + (2\cdot2 + 3\cdot1)i = -4 + 7i $$
+                    </div>
+                </script>
+            </section>
+            
+            <section data-markdown>
+                <script type="text/template">
+                    ## Деление комплексных чисел
+                    
+                    **Формула:**
+                    <div style="font-size: 0.7em;">
+                    $$ \frac{a + bi}{c + di} = \frac{(a + bi)(c - di)}{c^2 + d^2}
+                    = \frac{ac + bd}{c^2 + d^2} + \frac{bc - ad}{c^2 + d^2}i $$
+                    </div>
+                    
+                    **Формула (тригонометрическая форма):**
+                        <div style="font-size: 0.7em;">
+                    $$ \frac{r_1(\cos\varphi_1 + i\sin\varphi_1)}{r_2(\cos\varphi_2 + i\sin\varphi_2)} 
+                    = \frac{r_1}{r_2}[\cos(\varphi_1 - \varphi_2) + i\sin(\varphi_1 - \varphi_2)] $$
+                        </div>
+                    
+                    **Пример:**
+                            <div style="font-size: 0.7em;">
+                    $$ \frac{1 + i}{2 - i} = \frac{(1 + i)(2 + i)}{2^2 + (-1)^2} = \frac{1 + 3i}{5} = 0.2 + 0.6i $$
+                            </div>
+                </script>
+            </section>
+            
+            <!-- Слайд 20: Калькулятор комплексных чисел -->
+            <section>
+                <h3>Калькулятор комплексных чисел</h3>
+                <div class="calculator-container">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Первое число (z₁):</label>
+                            <input type="text" id="calc_num1" value="3+4i" placeholder="a+bi">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Второе число (z₂):</label>
+                            <input type="text" id="calc_num2" value="1+2i" placeholder="c+di">
+                        </div>
+                    </div>
+                    
+                    <div class="operation-buttons">
+                        <button class="op-btn" data-op="add">+ Сложение</button>
+                        <button class="op-btn" data-op="sub">- Вычитание</button>
+                        <button class="op-btn" data-op="mul">× Умножение</button>
+                        <button class="op-btn" data-op="div">÷ Деление</button>
+                    </div>
+                    
+                    <div class="result-container" style="margin-top: 70px;">
+                        <h4 style="color: black;">Результат:</h4>
+                        <div id="calc_result" class="result-box"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Слайд 21 - с исходным кодом -->
+            <section>
+                <h3>Исходный код программы:</h3>
+
+                <div style="display: flex; justify-content: center; gap: 40px; margin-top: 50px;">
+                 <!-- Первая картинка -->
+                <div style="text-align: center;">
+                <img src="C:\Users\Степан\Downloads\2026-01-21_21-06-23.png"
+                 style="max-width: 700px; max-height: 410px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                 </div>
+
+                <!-- Вторая картинка -->
+                <div style="text-align: center;">
+                <img src="C:\Users\Степан\Downloads\2026-01-21_21-07-50.png"
+                     style="max-width: 700px; max-height: 850px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+                </div>
+                </section>
+
+            <!-- Слайд 22: Свойства комплексных чисел -->
+            <section data-markdown>
+                <script type="text/template">
+                    ## Свойства комплексных чисел
+                    
+                    1. **Коммутативность сложения и умножения:**
+                    <div style="font-size: 0.7em;">
+                       $$ z_1 + z_2 = z_2 + z_1, \\\; z_1 \cdot z_2 = z_2 \cdot z_1 $$
+                        </div>
+                    
+                    2. **Ассоциативность:**
+                        <div style="font-size: 0.7em;">
+                       $$ (z_1 + z_2) + z_3 = z_1 + (z_2 + z_3) $$
+                            </div>
+                    
+                    3. **Дистрибутивность:**
+                            <div style="font-size: 0.7em;">
+                       $$ z_1 \cdot (z_2 + z_3) = z_1 \cdot z_2 + z_1 \cdot z_3 $$
+                                </div>
+                    
+                    4. **Сопряжённое число:**
+                                <div style="font-size: 0.7em;">
+                       $$ \overline{a + bi} = a - bi $$
+                                    </div>
+                </script>
+            </section>
+            
+            <!-- Слайд 23-25: Дополнительная информация -->
+            <section data-markdown>
+                <script type="text/template">
+                    ## Формула Муавра для комплексного числа в тригонометрической форме:
+
+                    $$ [r(\cos\varphi + i\sin\varphi)]^n = r^n(\cos n\varphi + i\sin n\varphi) $$
+                    
+                    **Пример:**
+                    $$ (1 + i)^4 = [\sqrt{2}(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4})]^4 $$
+                    $$ = 4(\cos\pi + i\sin\pi) = -4 $$
+                </script>
+            </section>
+            
+            <section data-markdown>
+                <script type="text/template">
+                    ## Корни из комплексных чисел
+                    
+                    Формула для нахождения n-х корней:
+                    
+                    $$ \sqrt[n]{z} = \sqrt[n]{r}\left(\cos\frac{\varphi + 2\pi k}{n} + i\sin\frac{\varphi + 2\pi k}{n}\right) $$
+                    
+                    где $k = 0, 1, 2, ..., n-1$
+                    
+                    **Пример:**
+                    Квадратные корни из $i$:
+                    $$ \sqrt{i} = \pm\left(\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i\right) $$
+                </script>
+            </section>
+            
+            <section data-markdown>
+                <script type="text/template">
+                <h3>Применение комплексных чисел</h3>
+
+                <div style="font-size: 1.5em;">
+                <ul>
+                    <li class="fragment">Электротехника (расчет цепей переменного тока)</li>
+                    <li class="fragment">Квантовая механика (волновые функции)</li>
+                    <li class="fragment">Теория сигналов (преобразование Фурье)</li>
+                    <li class="fragment">Аэродинамика (конформные отображения)</li>
+                    <li class="fragment">Компьютерная графика (фракталы)</li>
+                </ul>
+                    </div>
+                </script>
+            </section>
+            
+            <!-- Слайд 26: Весёлая картинка по теме -->
+            <section class="center">
+            <img src=https://cs.pikabu.ru/post_img/big/2013/06/05/6/1370419330_1445084012.jpg
+            style="max-width: 100%; max-height: 100vh; border: none; background: transparent;">
+            </section>
+
+             <!-- Слайд 27: Весёлая картинка по теме -->
+            <section class="center">
+            <img src=https://www.meme-arsenal.com/memes/09088967ce5fcdf49dc59f1c574ec331.jpg
+            style="max-width: 100%; max-height: 100vh; border: none; background: transparent;">
+            </section>
+            
+            <!-- Слайд 28: Заключительный слайд -->
+            <section class="center">
+                Спасибо за внимание!
+            </section>
+            
+        </div>
+    </div>
+    
+    <!-- Подключение библиотек -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/math/math.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/menu/menu.min.js"></script>
+    
+    <!-- Подключение KaTeX -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    
+    <!-- Подключение Math.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.9.1/math.min.js"></script>
+    
+    <!-- Подключение собственных скриптов -->
+    <script src="js/complex.js"></script>
+    
+    <!-- Инициализация Reveal.js -->
+    <!-- Подключаем плагин меню -->
+<!-- Подключение плагинов -->
+ <script>
+    // Инициализация Reveal.js
+    Reveal.initialize({
+        // Основные настройки
+        hash: true,
+        center: false,
+        slideNumber: true,
+        controls: true,
+        progress: true,
+        transition: 'slide',
+
+        // Плагины
+        plugins: [
+            RevealMarkdown,
+            RevealHighlight,
+            RevealNotes,
+            RevealMath.KaTeX
+        ]
+    });
+
+    // Простое меню своими руками
+    document.addEventListener('DOMContentLoaded', function() {
+        // Создаём кнопку меню
+        var menuBtn = document.createElement('div');
+        menuBtn.innerHTML = '☰ МЕНЮ';
+        menuBtn.style.position = 'fixed';
+        menuBtn.style.top = '10px';
+        menuBtn.style.left = '10px';
+        menuBtn.style.zIndex = '1000';
+        menuBtn.style.background = '#333';
+        menuBtn.style.color = 'white';
+        menuBtn.style.padding = '8px 15px';
+        menuBtn.style.borderRadius = '5px';
+        menuBtn.style.cursor = 'pointer';
+        menuBtn.style.fontSize = '14px';
+
+        // Создаём меню
+        var menu = document.createElement('div');
+        menu.style.position = 'fixed';
+        menu.style.top = '50px';
+        menu.style.left = '10px';
+        menu.style.zIndex = '1000';
+        menu.style.background = 'white';
+        menu.style.border = '1px solid #ccc';
+        menu.style.padding = '10px';
+        menu.style.borderRadius = '5px';
+        menu.style.maxHeight = '400px';
+        menu.style.overflowY = 'auto';
+        menu.style.display = 'none';
+        menu.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+
+        // Заполняем меню
+        for (var i = 1; i <= 20; i++) {
+            var item = document.createElement('div');
+            item.innerHTML = 'Слайд ' + i;
+            item.style.padding = '5px 10px';
+            item.style.cursor = 'pointer';
+            item.style.borderBottom = '1px solid #eee';
+            item.onclick = function(num) {
+                return function() {
+                    Reveal.slide(num);
+                    menu.style.display = 'none';
+                };
+            }(i - 1); // Reveal.js нумерация с 0
+
+            menu.appendChild(item);
+        }
+
+        // Показываем/скрываем меню
+        menuBtn.onclick = function() {
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        };
+
+        // Закрываем меню при клике вне его
+        document.addEventListener('click', function(e) {
+            if (!menu.contains(e.target) && e.target !== menuBtn) {
+                menu.style.display = 'none';
+            }
+        });
+
+        // Добавляем на страницу
+        document.body.appendChild(menuBtn);
+        document.body.appendChild(menu);
+    });
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,191 @@
+/* ЧЁРНО-БЕЛАЯ ТЕМА ДЛЯ ПРЕЗЕНТАЦИИ */
+
+/* Основные цвета */
+:root {
+    --text-color: #000000;      /* Чёрный текст */
+    --bg-color: #ffffff;        /* Белый фон */
+    --accent-color: #333333;    /* Тёмно-серый для акцентов */
+    --border-color: #cccccc;    /* Светло-серый для границ */
+    --card-bg: #f8f8f8;         /* Светло-серый фон для карточек */
+}
+
+/* Основные стили */
+.reveal {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Заголовки - чёрные */
+.reveal h1, .reveal h2, .reveal h3 {
+    color: var(--text-color) !important;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.reveal h1 {
+    font-size: 2em !important;
+}
+
+.reveal h2 {
+    font-size: 1.6em !important;
+}
+
+.reveal h3 {
+    font-size: 1.3em !important;
+}
+
+/* Основной текст */
+.reveal p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+/* Списки */
+.reveal ul, .reveal ol {
+    margin-left: 30px;
+    font-size: 0.95em;
+}
+
+.reveal li {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Формулы */
+.reveal .katex {
+    color: var(--text-color) !important;
+}
+
+/* Контейнеры для программ */
+.converter-container, .calculator-container, .plot-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Поля ввода и кнопки */
+.reveal input, .reveal select {
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--text-color);
+    padding: 8px;
+    font-size: 0.9em;
+}
+
+.reveal button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.reveal button:hover {
+    background: #555555;
+}
+
+/* Результаты */
+.result-box {
+    background: var(--card-bg);
+    border-left: 4px solid var(--accent-color);
+    padding: 10px;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+/* Таблицы */
+.reveal table {
+    border: 1px solid var(--border-color);
+    margin: 20px auto;
+}
+
+.reveal th {
+    background: var(--accent-color);
+    color: white;
+    padding: 10px;
+}
+
+.reveal td {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    color: var(--text-color);
+}
+
+/* Убираем все скроллы */
+.reveal .slides {
+    overflow: hidden !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: var(--bg-color) !important;
+}
+
+.reveal .slides section {
+    overflow: hidden !important;
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* Навигация - тоже чёрно-белая */
+.reveal .controls {
+    color: var(--accent-color) !important;
+}
+
+.reveal .progress {
+    background: var(--border-color);
+}
+
+.reveal .progress span {
+    background: var(--accent-color);
+}
+
+/* Заметки докладчика */
+.reveal .speaker-notes {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+/* График Plotly */
+#plotly_graph .modebar {
+    background: white !important;
+}
+
+/* Маркдаун слайды */
+.reveal .slides section[data-markdown] {
+    background-color: var(--bg-color) !important;
+}
+
+/* Делаем текст меньше для компактности */
+.reveal .slides section p:not(h1 p, h2 p, h3 p),
+.reveal .slides section li,
+.reveal .slides section td {
+    font-size: 0.9em !important;
+    line-height: 1.3 !important;
+}
+
+/* Уменьшаем заголовки в Markdown */
+.reveal .slides section[data-markdown] h1 {
+    font-size: 1.8em !important;
+}
+
+.reveal .slides section[data-markdown] h2 {
+    font-size: 1.5em !important;
+}
+
+.reveal .slides section[data-markdown] h3 {
+    font-size: 1.2em !important;
+}
